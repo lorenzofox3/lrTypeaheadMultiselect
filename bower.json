@@ -1,0 +1,26 @@
+{
+  "name": "lrTypeaheadMultiselect",
+  "main": "lrTypeaheadMultiselect.js",
+  "version": "1.0.0",
+  "authors": [
+    "lorenzofox3 <laurent34azerty@gmail.com>"
+  ],
+  "description": "typeahead multiselect component for angular js",
+  "keywords": [
+    "angular",
+    "typeahead",
+    "multi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dev-dependencies": {
+    "angular-mocks": "~1.4.4",
+    "angular": "~1.4.4"
+  }
+}
