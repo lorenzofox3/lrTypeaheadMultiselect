@@ -137,7 +137,7 @@
               var key = event.keyCode;
               if (key === 13) {
                 if (!strict || ctrl.suggestions[0]) {
-                  ctrl.addValue(ctrl.highlighted);
+                  ctrl.addValue(ctrl.highlighted || element[0].value);
                   element[0].value = '';
                   event.preventDefault();
                 }
