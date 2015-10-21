@@ -39,6 +39,7 @@
          */
         suggest: function suggest (input) {
           var ctrl = this;
+          ctrl.valueCollection = ctrl.valueCollection || 0;
           suggestionInput = input;
           suggestions = input ?
             function () {
@@ -94,7 +95,7 @@
             return suggestionInput;
           }
         },
-        highlighted:{
+        highlighted: {
           get: function () {
             return highlighted;
           }
@@ -121,6 +122,7 @@
         require: '^lrTypeahead',
         link: function (scope, element, attr, ctrl) {
           var editing = null;
+          var strict = attr.strictMode != false;
           element.bind('input', function () {
             if (editing !== null) {
               $timeout.cancel(editing);
@@ -133,10 +135,12 @@
           element.bind('keydown', function (event) {
             scope.$apply(function () {
               var key = event.keyCode;
-              if (key === 13 && ctrl.suggestions[0]) {
-                ctrl.addValue(ctrl.highlighted);
-                element[0].value = '';
-                event.preventDefault();
+              if (key === 13) {
+                if (!strict || ctrl.suggestions[0]) {
+                  ctrl.addValue(ctrl.highlighted);
+                  element[0].value = '';
+                  event.preventDefault();
+                }
               } else if (key === 8 && !element[0].value) {
                 ctrl.removeValue();
               } else if (key === 40) {
