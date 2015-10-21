@@ -122,7 +122,7 @@
         require: '^lrTypeahead',
         link: function (scope, element, attr, ctrl) {
           var editing = null;
-          var strict = attr.strictMode != false;
+          var strict = attr.strictMode !== 'false';
           element.bind('input', function () {
             if (editing !== null) {
               $timeout.cancel(editing);

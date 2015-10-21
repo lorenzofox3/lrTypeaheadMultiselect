@@ -1,7 +1,7 @@
 {
   "name": "lr-typeahead-multiselect",
   "main": "lrTypeaheadMultiselect.js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "authors": [
     "lorenzofox3 <laurent34azerty@gmail.com>"
   ],
